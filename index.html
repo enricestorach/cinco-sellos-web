@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinco Sellos · 5 vídeos por país · 196 países</title>
+<meta name="description" content="Cinco Sellos: 5 vídeos de cada país del mundo, como 5 sellos en un pasaporte. Misterios, guía, historia, costumbres y gastronomía de los 196 países.">
+<meta name="theme-color" content="#0b0614">
+<meta property="og:title" content="Cinco Sellos">
+<meta property="og:description" content="5 vídeos por país · 196 países. Síguenos en YouTube, Instagram y TikTok.">
+<meta property="og:image" content="img/compartir.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icono.png">
+<link rel="apple-touch-icon" href="img/icono.png">
+<style>
+  :root {
+    --noche: #0b0614;
+    --crema: #f7e7c6;
+    --dorado: #d8b25a;
+    --misterios: #8b4cd6;
+    --guia: #3fae5a;
+    --historia: #a0632d;
+    --costumbres: #e6197e;
+    --gastronomia: #ff8a1f;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--noche); }
+  body {
+    min-height: 100vh;
+    color: var(--crema);
+    font-family: var(--serif);
+    background:
+      radial-gradient(ellipse at 50% 18%, #2e1a4d 0%, #170c2a 42%, var(--noche) 78%) fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Cielo de estrellas */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 8%, #fff8e8cc, transparent),
+      radial-gradient(1px 1px at 82% 12%, #fff8e8aa, transparent),
+      radial-gradient(2px 2px at 64% 30%, #fff8e899, transparent),
+      radial-gradient(1px 1px at 28% 42%, #fff8e8aa, transparent),
+      radial-gradient(1.5px 1.5px at 91% 52%, #fff8e8bb, transparent),
+      radial-gradient(1px 1px at 6% 66%, #fff8e899, transparent),
+      radial-gradient(2px 2px at 46% 76%, #fff8e877, transparent),
+      radial-gradient(1px 1px at 74% 88%, #fff8e8aa, transparent),
+      radial-gradient(1.5px 1.5px at 20% 94%, #fff8e899, transparent),
+      radial-gradient(1px 1px at 52% 4%, #fff8e8aa, transparent),
+      radial-gradient(1px 1px at 36% 22%, #fff8e877, transparent),
+      radial-gradient(1.5px 1.5px at 96% 80%, #fff8e899, transparent);
+  }
+  main { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; padding: 28px 18px 40px; }
+
+  /* Cabecera */
+  .cabecera { text-align: center; }
+  .sello-canal {
+    width: 132px; height: 132px; border-radius: 50%;
+    display: block; margin: 0 auto 14px;
+    box-shadow: 0 0 0 3px #f7e7c622, 0 10px 40px #8b4cd655;
+  }
+  h1 { font-size: 34px; letter-spacing: 3px; font-weight: 700; line-height: 1.1; }
+  .lema { color: var(--dorado); font-size: 14px; letter-spacing: 2px; margin-top: 8px; }
+  .puntos { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+  .puntos span { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* Botones de las redes */
+  .redes { display: grid; gap: 14px; margin-top: 26px; }
+  .boton {
+    display: flex; align-items: center; gap: 16px;
+    min-height: 74px; padding: 12px 18px;
+    border-radius: 18px; text-decoration: none; color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 8px 22px #0007;
+    transition: transform .12s ease, filter .12s ease;
+  }
+  .boton:hover { filter: brightness(1.08); transform: translateY(-2px); }
+  .boton:active { transform: scale(.98); }
+  .boton svg { flex: none; width: 42px; height: 42px; }
+  .boton .texto { flex: 1; display: flex; flex-direction: column; }
+  .boton .red { font-size: 21px; font-weight: 700; }
+  .boton .usuario { font-size: 15px; opacity: .9; margin-top: 2px; }
+  .boton .flecha { font-size: 26px; opacity: .8; }
+  .youtube { background: #e62117; }
+  .instagram { background: linear-gradient(45deg, #f9a12e 0%, #e1306c 45%, #8a3ab9 100%); }
+  .tiktok { background: #111; border: 2px solid #ffffff1f; box-shadow: -3px 0 0 #25f4ee, 3px 0 0 #fe2c55, 0 8px 22px #0007; }
+
+  /* Información */
+  section { margin-top: 40px; }
+  h2 {
+    font-size: 22px; letter-spacing: 1.5px; text-align: center; color: var(--crema);
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2::before, h2::after { content: ""; flex: 1; height: 1px; background: #d8b25a55; }
+  p { font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.55; color: #f7e7c6e6; margin-top: 14px; text-align: center; }
+  p strong { color: var(--dorado); }
+
+  .series { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+  .serie {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 12px 8px 14px; border-radius: 16px;
+    background: #ffffff08; border: 1px solid var(--c);
+  }
+  .serie:last-child { grid-column: 1 / -1; max-width: calc(50% - 6px); justify-self: center; width: 100%; }
+  .serie img { width: 104px; height: 104px; border-radius: 50%; }
+  .serie b { font-family: Arial, Helvetica, sans-serif; color: var(--c); font-size: 15px; margin-top: 8px; }
+  .serie small { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #f7e7c6bb; margin-top: 4px; line-height: 1.35; }
+
+  .paises { display: grid; gap: 12px; margin-top: 18px; }
+  .pais {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 16px; background: #ffffff0a; border: 1px solid #f7e7c61f;
+  }
+  .pais .bandera { width: 42px; height: 28px; border-radius: 4px; flex: none; box-shadow: 0 2px 6px #0008; }
+  .pais .nombre { flex: 1; font-size: 19px; font-weight: 700; }
+  .pais .estado { display: block; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 400; color: var(--dorado); margin-top: 3px; }
+  .pais .sellos { display: flex; gap: 5px; }
+  .pais .sellos span { width: 14px; height: 14px; border-radius: 50%; background: var(--c); }
+  .pais .sellos span.falta { background: transparent; border: 2px solid var(--c); opacity: .55; }
+
+  footer { margin-top: 44px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #f7e7c688; }
+</style>
+</head>
+<body>
+<main>
+  <header class="cabecera">
+    <img class="sello-canal" src="img/sello-canal.jpg" alt="Sello del canal Cinco Sellos con un globo terráqueo dorado">
+    <h1>CINCO SELLOS</h1>
+    <div class="lema">5 VÍDEOS POR PAÍS · 196 PAÍSES</div>
+    <div class="puntos" aria-hidden="true">
+      <span style="background:var(--misterios)"></span><span style="background:var(--guia)"></span><span style="background:var(--historia)"></span><span style="background:var(--costumbres)"></span><span style="background:var(--gastronomia)"></span>
+    </div>
+  </header>
+
+  <!-- Los enlaces de las redes: cámbialos aquí si alguna vez cambia el usuario -->
+  <nav class="redes" aria-label="Redes del canal">
+    <a class="boton youtube" href="https://www.youtube.com/@cincosellos" target="_blank" rel="noopener">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="9" width="44" height="30" rx="9" fill="#fff"/><path d="M20 17 L32 24 L20 31 Z" fill="#e62117"/></svg>
+      <span class="texto"><span class="red">YouTube</span><span class="usuario">@cincosellos · vídeos completos</span></span>
+      <span class="flecha" aria-hidden="true">›</span>
+    </a>
+    <a class="boton instagram" href="https://www.instagram.com/cincosellos/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="11" fill="none" stroke="#fff" stroke-width="4"/><circle cx="24" cy="24" r="8.5" fill="none" stroke="#fff" stroke-width="4"/><circle cx="34.5" cy="13.5" r="2.6" fill="#fff"/></svg>
+      <span class="texto"><span class="red">Instagram</span><span class="usuario">@cincosellos · reels a diario</span></span>
+      <span class="flecha" aria-hidden="true">›</span>
+    </a>
+    <a class="boton tiktok" href="https://www.tiktok.com/@cincosellos" target="_blank" rel="noopener">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <g transform="translate(-1.2 -1.2)"><path d="M27 6h6c.6 5 3.6 8.4 8.5 8.8v6.2c-3.3 0-6.1-1-8.5-2.7V31a11 11 0 1 1-11-11c.6 0 1.2 0 1.8.1v6.4a5 5 0 1 0 3.2 4.6Z" fill="#25f4ee"/></g>
+        <g transform="translate(1.2 1.2)"><path d="M27 6h6c.6 5 3.6 8.4 8.5 8.8v6.2c-3.3 0-6.1-1-8.5-2.7V31a11 11 0 1 1-11-11c.6 0 1.2 0 1.8.1v6.4a5 5 0 1 0 3.2 4.6Z" fill="#fe2c55"/></g>
+        <path d="M27 6h6c.6 5 3.6 8.4 8.5 8.8v6.2c-3.3 0-6.1-1-8.5-2.7V31a11 11 0 1 1-11-11c.6 0 1.2 0 1.8.1v6.4a5 5 0 1 0 3.2 4.6Z" fill="#fff"/>
+      </svg>
+      <span class="texto"><span class="red">TikTok</span><span class="usuario">@cincosellos · historias a diario</span></span>
+      <span class="flecha" aria-hidden="true">›</span>
+    </a>
+  </nav>
+
+  <section>
+    <h2>QUÉ ES</h2>
+    <p>Recorremos <strong>los 196 países del mundo</strong>, uno a uno. De cada país hacemos <strong>5 vídeos</strong>, como <strong>5 sellos en un pasaporte</strong>: cuando ves los cinco, ese país queda completado.</p>
+    <p>Son vídeos animados, contados con calma y pensados para quien sueña con viajar… o para viajar sin moverse del sofá.</p>
+  </section>
+
+  <section>
+    <h2>LAS 5 SERIES</h2>
+    <div class="series">
+      <div class="serie" style="--c:var(--misterios)"><img src="img/sello-misterios.jpg" alt="Sello morado de Misterios y Leyendas"><b>Misterios y Leyendas</b><small>Las historias que se cuentan a media luz</small></div>
+      <div class="serie" style="--c:var(--guia)"><img src="img/sello-guia.jpg" alt="Sello verde de Guía y Rincones Secretos"><b>Guía y Rincones Secretos</b><small>Todo para preparar el viaje</small></div>
+      <div class="serie" style="--c:var(--historia)"><img src="img/sello-historia.jpg" alt="Sello marrón de Historia en Trivial"><b>Historia en Trivial</b><small>El concurso «El Gran Sello»</small></div>
+      <div class="serie" style="--c:var(--costumbres)"><img src="img/sello-costumbres.jpg" alt="Sello rosa de Choques Culturales"><b>Choques Culturales</b><small>Costumbres y trato con la gente</small></div>
+      <div class="serie" style="--c:var(--gastronomia)"><img src="img/sello-gastronomia.jpg" alt="Sello naranja de Gastronomía"><b>Gastronomía</b><small>Qué comer, dónde y cuándo</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>NUESTRO PASAPORTE</h2>
+    <div class="paises">
+      <div class="pais">
+        <svg class="bandera" viewBox="0 0 42 28" aria-hidden="true"><rect width="14" height="28" fill="#006847"/><rect x="14" width="14" height="28" fill="#fff"/><rect x="28" width="14" height="28" fill="#ce1126"/><circle cx="21" cy="14" r="3.2" fill="#8c5a2b"/></svg>
+        <span class="nombre">México<span class="estado">Completado · 5 de 5 sellos</span></span>
+        <span class="sellos" aria-label="5 de 5 sellos">
+          <span style="--c:var(--misterios)"></span><span style="--c:var(--guia)"></span><span style="--c:var(--historia)"></span><span style="--c:var(--costumbres)"></span><span style="--c:var(--gastronomia)"></span>
+        </span>
+      </div>
+      <div class="pais">
+        <svg class="bandera" viewBox="0 0 42 28" aria-hidden="true"><rect width="42" height="28" fill="#c8102e"/><rect y="9.33" width="42" height="9.34" fill="#fff"/></svg>
+        <span class="nombre">Austria<span class="estado">En curso · especial mercados navideños</span></span>
+        <span class="sellos" aria-label="Austria en curso">
+          <span style="--c:var(--misterios)" class="falta"></span><span style="--c:var(--guia)"></span><span style="--c:var(--historia)" class="falta"></span><span style="--c:var(--costumbres)" class="falta"></span><span style="--c:var(--gastronomia)" class="falta"></span>
+        </span>
+      </div>
+    </div>
+    <p>Quedan 194 países. ¿Cuál quieres que sea el siguiente? Cuéntanoslo en los comentarios.</p>
+  </section>
+
+  <footer>© Cinco Sellos · Vídeos animados de los 196 países</footer>
+</main>
+</body>
+</html>
